@@ -1,0 +1,21 @@
+{
+  "name": "esst-football-tournament",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ESST Football Tournament - league website with live scores, standings and an organizer dashboard (Vite + Supabase)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:standalone": "node scripts/make-standalone.mjs",
+    "start": "node server.mjs",
+    "preview": "vite preview",
+    "test": "node scripts/test-standings.mjs && node scripts/test-football.mjs && node scripts/check-i18n.mjs && node scripts/check-i18n-usage.mjs && node scripts/test-demo-mode.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}

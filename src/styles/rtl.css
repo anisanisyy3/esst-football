@@ -1,0 +1,34 @@
+/* ============================================================================
+   RTL (ARABIC) ADJUSTMENTS
+   Layout direction is set by [dir="rtl"] on <html>; most spacing already uses
+   logical properties in main.css. Numbers and scores stay left-to-right via
+   dir="ltr" attributes in the components.
+   ========================================================================== */
+
+html[dir='rtl'] body { letter-spacing: 0; }
+html[dir='rtl'] .hero-title,
+html[dir='rtl'] h1, html[dir='rtl'] h2, html[dir='rtl'] h3 { letter-spacing: 0; }
+
+/* Badges keep their uppercase Latin feel only for Latin scripts */
+html[dir='rtl'] .badge,
+html[dir='rtl'] .match-info-grid dt,
+html[dir='rtl'] .standings-table th { text-transform: none; letter-spacing: 0; }
+
+/* Team initials logos are Latin glyphs; keep them readable */
+html[dir='rtl'] .team-cell-short { letter-spacing: 0.04em; }
+
+/* Dropdown arrow of the language select sits on the left in RTL (native) */
+html[dir='rtl'] select { text-align: start; }
+
+/* Keep brand mark beside the text correctly */
+html[dir='rtl'] .brand { flex-direction: row; }
+
+/* Scoreboard columns: team / score / team order follows document direction,
+   which is correct in Arabic (home team appears on the right). */
+
+/* Match group titles capitalize only Latin text */
+html[dir='rtl'] .match-group-title { text-transform: none; }
+
+/* Modal / toast shadows stay on the visual side */
+html[dir='rtl'] .toast { border-inline-start: 4px solid var(--emerald); }
+html[dir='rtl'] .toast-error { border-inline-start-color: var(--danger); }
